@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_APP=app.py
+      - FLASK_RUN_HOST=0.0.0.0
+      - SQLALCHEMY_TRACK_MODIFICATIONS=False
+      - SQLALCHEMY_DATABASE_URI=mysql+pymysql://usuario:1234@db/prueba
+    depends_on:
+      - db
+    volumes:
+      - .:/code
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: prueba
+      MYSQL_USER: usuario
+      MYSQL_PASSWORD: 1234
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+
+volumes:
+  db-data:
