@@ -16,10 +16,6 @@ Este proyecto es una API diseñada para manejar saludos. Permite a los usuarios 
 - MySQL para la base de datos
 - Flask
 
-## Comenzando
-
-Para ejecutar este proyecto localmente, necesitarás Docker instalado en tu máquina. Sigue los siguientes pasos para poner en marcha el proyecto.
-
 ### Instalación
 
 1. Clona el repositorio en tu máquina local:
